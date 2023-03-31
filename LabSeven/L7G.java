@@ -14,37 +14,37 @@ public class L7G {
       double annualInterestRate = 4.5;
       double overdraft;
       int accountNo = 0;
-      ArrayList<Account> listAccount = new ArrayList<>();
+      ArrayList < Account > listAccount = new ArrayList < > ();
       do {
         System.out.println("Press (1) For Creating a Checking Account.");
         System.out.println("Press (2) For Creating a Savings Account.");
         System.out.print("Enter The Option : ");
         int choice = input.nextInt();
         switch (choice) {
-          case 1 -> {
-            accountNo++;
-            id++;
-            System.out.print("Enter The Balance : ");
-            balance = input.nextDouble();
-            System.out.print("Enter The Overdraft Limits :");
-            overdraft = input.nextDouble();
-            CheckingAccount obj1 = new CheckingAccount(id,
-                balance, annualInterestRate, overdraft);
-            listAccount.add(obj1);
-          }
-          case 2 -> {
-            accountNo++;
-            id++;
-            Random rand = new Random();
-            long smallest = 10000;
-            long biggest = 99999;
-            long cardNo = ThreadLocalRandom.current().nextLong(smallest, biggest + 1);
-            System.out.print("Enter The Balance : ");
-            balance = input.nextDouble();
-            SavingsAccount obj = new SavingsAccount(id,
-                balance, annualInterestRate, cardNo);
-            listAccount.add(obj);
-          }
+        case 1 -> {
+          accountNo++;
+          id++;
+          System.out.print("Enter The Balance : ");
+          balance = input.nextDouble();
+          System.out.print("Enter The Overdraft Limits :");
+          overdraft = input.nextDouble();
+          CheckingAccount obj1 = new CheckingAccount(id,
+            balance, annualInterestRate, overdraft);
+          listAccount.add(obj1);
+        }
+        case 2 -> {
+          accountNo++;
+          id++;
+          Random rand = new Random();
+          long smallest = 10000;
+          long biggest = 99999;
+          long cardNo = ThreadLocalRandom.current().nextLong(smallest, biggest + 1);
+          System.out.print("Enter The Balance : ");
+          balance = input.nextDouble();
+          SavingsAccount obj = new SavingsAccount(id,
+            balance, annualInterestRate, cardNo);
+          listAccount.add(obj);
+        }
         }
         System.out.println();
       } while (accountNo < 4);
@@ -56,7 +56,7 @@ public class L7G {
         listAccount.get(i).withdraw(500);
       }
       System.out.println(
-          "\nAccounts Details After Perform Pne Deposit(200) And One 1" + "Withdraw(500)Operation For Each Aaccount\n");
+        "\nAccounts Details After Perform Pne Deposit(200) And One 1" + "Withdraw(500)Operation For Each Aaccount\n");
       for (int i = 0; i < listAccount.size(); i++) {
         System.out.println(listAccount.get(i));
       }
@@ -144,9 +144,9 @@ class Account {
   @Override
   public String toString() {
     return "\n Annual Interest rate : " + this.getBalance() +
-        this.getAnnualInterestRate() +
-        "\n Account ID : " + this.getId() + "\n Date Created: " + this.getDateCreated().getTime() +
-        "\n Current balance: $ " + "%" + "\n Monthly Interest Amount : $ " + this.getMonthlyInterestAmount();
+      this.getAnnualInterestRate() +
+      "\n Account ID : " + this.getId() + "\n Date Created: " + this.getDateCreated().getTime() +
+      "\n Current balance: $ " + "%" + "\n Monthly Interest Amount : $ " + this.getMonthlyInterestAmount();
   }
 }
 
@@ -183,8 +183,7 @@ class SavingsAccount extends Account {
   private long cardNo;
   private Calendar expiryDate;
 
-  public SavingsAccount() {
-  }
+  public SavingsAccount() {}
 
   public SavingsAccount(int id, double balance, double annualInterestRate, long cardNo) {
     super(id, balance, annualInterestRate);
@@ -207,9 +206,9 @@ class SavingsAccount extends Account {
 
   @Override
   public String toString() {
-    return "Savings Account ->" + super.toString() + "\n Credit Card Number : " + this.getCardNo()
-        + "\n Card Expiry Date: " +
-        this.getExpiryDate().getTime() + "\n Credit Balance : &" +
-        this.getCreditBalance();
+    return "Savings Account ->" + super.toString() + "\n Credit Card Number : " + this.getCardNo() +
+      "\n Card Expiry Date: " +
+      this.getExpiryDate().getTime() + "\n Credit Balance : &" +
+      this.getCreditBalance();
   }
 }

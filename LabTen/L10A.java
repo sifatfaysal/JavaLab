@@ -12,24 +12,24 @@ public class L10A {
         try {
           for (int i = 0; i < size; i++) {
             System.out.println("Input The Object " + (i + 1) +
-                " Info : ");
+              " Info : ");
             System.out.print("Input Number 01 : ");
             num1 = input.nextDouble();
             System.out.print("Input Number 01 : ");
             num2 = input.nextDouble();
             cal[i] = new Calculator(num1, num2);
             switch (i) {
-              case 0 ->
-                System.out.println("Additon is : " +
-                    cal[i].Addition());
-              case 1 ->
-                System.out.println("Substraction is : " +
-                    cal[i].Subtraction());
-              case 2 ->
-                System.out.println("Multiplication is : " + cal[i].Multiplication());
-              default ->
-                System.out.println("Division is : " +
-                    cal[i].Division());
+            case 0 ->
+            System.out.println("Additon is : " +
+              cal[i].Addition());
+            case 1 ->
+            System.out.println("Substraction is : " +
+              cal[i].Subtraction());
+            case 2 ->
+            System.out.println("Multiplication is : " + cal[i].Multiplication());
+            default ->
+            System.out.println("Division is : " +
+              cal[i].Division());
             }
           }
         } catch (NumberFormatException e) {

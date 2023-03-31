@@ -18,8 +18,7 @@ class Account {
   private double balance = 0.0;
   private static double annualInterestRate = 0.0;
 
-  public Account() {
-  }
+  public Account() {}
 
   public Account(int id, double balance, double annualInterestRate) {
     this();
