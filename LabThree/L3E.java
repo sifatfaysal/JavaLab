@@ -15,6 +15,7 @@ public class L3E {
                     System.out.print("#");
                     j++;
                 }
+                
                 System.out.println();
                 i++;
             } while (i <= size);
